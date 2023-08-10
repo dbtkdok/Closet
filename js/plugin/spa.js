@@ -21,11 +21,7 @@ function storyFunc(){
 
     ScrollTrigger.refresh();
 
-
     $('.horizontal').each(function (i, el) {
-
-        console.log(el)
-
         let thisSection = $(this);
         let thisPinWrap = thisSection.find('.pin-wrap');
         let thisAnimWrap = thisPinWrap.find('.animation-wrap');
@@ -50,8 +46,6 @@ function storyFunc(){
 
         var totalH = itemWidth + theseItems.height();
 
-
-
         tt = ScrollTrigger.create({
             id: "horizontalSectionScrolling",
             trigger: thisSection[0],
@@ -65,18 +59,18 @@ function storyFunc(){
             onUpdate: self => {
                 if (self.isActive) {
                     thisAnimWrap.css({"top": scrollPositionY + "px"});
-                    console.log('update');
+                    //console.log('update');
                     thisPinWrap.css('overflow', 'initial');
 
                 }
             },
             onLeave: ({progress, direction, isActive}) => {
                 thisAnimWrap.css({"top": `${totalH}px`});
-                console.log('onLeave');
+                //console.log('onLeave');
             },
             onLeaveBack: ({progress, direction, isActive}) => {
                 thisAnimWrap.css({"top": ""});
-                console.log('onLeaveBack');
+                //console.log('onLeaveBack');
             }
         });
 
@@ -99,7 +93,7 @@ function cursor_event() {
 
     $('#section01 .container02 .items05').mouseenter(function () {
 
-        console.log('enterrrrrr');
+        //console.log('enterrrrrr');
         $('#flag').addClass('on2');
         $('.ch-img img').attr('src','intro/over_button/click.png');
     }).mouseleave(function () {
@@ -142,7 +136,7 @@ function cursor_event() {
 // 페이지별 자바스크립트 정의
 const pageFunc = {
     home: () => {
-        console.log('home 도착!');
+        //console.log('home 도착!');
 
         $('#section01 ').addClass('on');
 
@@ -169,27 +163,21 @@ const pageFunc = {
 
 
         ScrollTrigger.scrollerProxy("body", {
-
             scrollTop(value) {
-
                 if (arguments.length) {
                     container.scrollTop = value;
                 }
-
                 return container.scrollTop;
-
             }
         });
-
 
         let textList = $('#section02 .text01 > div');
         let numList = $('#section02 .page_number > div');
 
         /* 스 크 롤 이 벤 트 영 역 */
         container.addListener((e) => {
-
             let scrollTop = container.scrollTop;
-            console.log(scrollTop);
+            //console.log(scrollTop);
 
 
             $('#section02 .circle_fix').css('transform', `translateY(${scrollTop}px)`);
@@ -221,13 +209,18 @@ const pageFunc = {
                 numList.eq(3).addClass('on');
             }
 
+            if (scrollTop >= 12000 && scrollTop <= 15000) {
+                textList.eq(4).addClass('on');
+                numList.eq(4).addClass('on');
+            }
+
         });
 
 
         $('.startPoint').click(function () {
 
             container.scrollTo(0, 0, 600, {
-                callback: () => console.log('done!'),
+                callback: () => "",
                 easing: easing.easeInOutCirc,
             });
 
@@ -237,7 +230,7 @@ const pageFunc = {
 
     },
     about: () => {
-        console.log('about 도착!');
+        //console.log('about 도착!');
 
 
         const aboutVideo = document.querySelector('#about_video');
@@ -289,7 +282,7 @@ const pageFunc = {
             container.addListener((e) => {
 
                 let scrollTop = container.scrollTop;
-                console.log(scrollTop);
+                //console.log(scrollTop);
 
                 if (scrollTop >= 1) {
                     $('#section03').addClass('on');
@@ -424,7 +417,7 @@ const pageFunc = {
             $('.startPoint').click(function () {
 
                 container.scrollTo(0, 0, 600, {
-                    callback: () => console.log('done!'),
+                    callback: () => "",
                     easing: easing.easeInOutCirc,
                 });
 
@@ -436,7 +429,7 @@ const pageFunc = {
 
     },
     love: () => {
-        console.log('love 도착!');
+        //console.log('love 도착!');
 
         (function () {
 
@@ -471,7 +464,7 @@ const pageFunc = {
             container.addListener((e) => {
 
                 let scrollTop = container.scrollTop;
-                console.log(scrollTop);
+                //console.log(scrollTop);
 
 
                 $('#fix_section').css('transform', `translateY(${scrollTop}px)`);
@@ -495,7 +488,7 @@ const pageFunc = {
             $('.startPoint').click(function () {
 
                 container.scrollTo(0, 0, 600, {
-                    callback: () => console.log('done!'),
+                    callback: () => "",
                     easing: easing.easeInOutCirc,
                 });
 
@@ -509,7 +502,7 @@ const pageFunc = {
 
         let value = 0;
 
-        console.log('category 도착!');
+        //console.log('category 도착!');
 
         const category = $('#category');
         const leftElem = $('.long_text .inner');
@@ -521,13 +514,13 @@ const pageFunc = {
 
         category.on('wheel', function (e) {
 
-            console.log();
+            //console.log();
 
             let v = e.originalEvent.deltaY;
 
             leftTop = leftElem[0].getBoundingClientRect().top;
             rightTop = rightElem[0].getBoundingClientRect().top;
-            console.log(rightTop);
+            //console.log(rightTop);
 
             /*        if(leftTop < -3000){
                         console.log('down');
@@ -668,18 +661,10 @@ const pageFunc = {
 
     },
     menu: () => {
-        console.log('menu 도착!')
+
     },
     story: () => {
-        console.log('story 도착!')
-
-            // window.location.reload();
-
-
-
         const container = document.querySelector('#story');
-
-
           let bodyScrollBar = Scrollbar.init(container, {damping: 0.1, delegateTo: container});
 
 
