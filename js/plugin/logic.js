@@ -17,7 +17,7 @@ function Logic () {
         "Website : https://github.com/simseonbeom");
 
 
-    console.log("%c - KindTiger - ",'background:black; color:white;');
+    //console.log("%c - KindTiger - ",'background:black; color:white;');
 
 
     // class delay logic event
