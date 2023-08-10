@@ -11,16 +11,346 @@ body {
   display: flex;
 }
 
-.blog-slider {
-  width: 95%;
-  position: relative;
-  margin: auto;
-  background: #5a75ff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  padding: 25px;
-  border-radius: 25px;
-  height: 90%;
-  transition: all 0.3s;
+
+#flag.on2 > div{
+    border: none;
+}
+
+#flag.on2 .round{
+    opacity: 1;
+}
+
+#flag .round{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition:all .5s;
+}
+
+#flag .round > div:nth-child(1){
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#flag .round > div:nth-child(2){
+    animation: round 5s infinite linear;
+}
+
+
+@keyframes round {
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+
+#home {
+    height: 200vh;
+    /*background: orange;*/
+}
+
+
+#section01{
+    height: 100vh;
+    position:relative;
+    background: url("https://www.designnas.com/portfolio/bx-site/pamela/css/../images/img01.jpg") no-repeat center;
+    background-size:cover;
+}
+
+#section01 .right_circle{
+    position: absolute;
+    right: 95px;
+    top: 50%;
+    transform: translateY(-50%);
+    /*z-index: 10;*/
+}
+
+
+#section01 .container01 .items01{
+    background-image: url("https://www.designnas.com/portfolio/bx-site/pamela/css/../images/img02.png");
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+    opacity: 0;
+    transition: all 1.5s;
+}
+
+#section01.on .container01 .items01{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+#section01 .container01 .items02{
+    background-image: url("https://www.designnas.com/portfolio/bx-site/pamela/css/../images/img03.png");
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(0);
+    opacity: 0;
+    transition: all 1.5s;
+}
+
+#section01.on .container01 .items02{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+#section01 .container02{
+    width: 800px;
+    height: 480px;
+    position: absolute;
+    left: 190px;
+    top: 220px;
+}
+
+#section01 .container02 > li{
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 2.5s;
+}
+
+#section01.on .container02 > li{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#section01 .container02 .items03{
+    margin-bottom: 28px;
+    transition-delay:0.2s;
+}
+
+#section01 .container02 .items04{
+    margin-bottom: 80px;
+    transition-delay:0.4s;
+}
+
+#section01 .container02 .items05{
+    margin-bottom: 30px;
+    margin-left: -50px;
+    transition-delay:0.6s;
+}
+
+#section01 .container02 .items06{
+    margin-bottom: 30px;
+    margin-left: -50px;
+    transition-delay:0.8s;
+}
+
+
+#section02{
+    height: 100vh;
+    position:relative;
+    background: #6f5d47;
+    transition: all 1s .3s;
+    overflow: hidden;
+}
+
+#section02 .round{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 1000;
+}
+
+
+
+
+/*
+#section02 .inner{
+    width: 100vw;
+    height: 500vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+*/
+
+#section02.on{
+    transform: translateY(-100%) ;
+}
+
+#section02 .overlay{
+    width: 100vw;
+    height: 100vh;
+    background: #6f5d47;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all .5s cubic-bezier(0.03, 0.51, 0.58, 1);
+}
+
+
+#section02 .scroll-content{
+    height: 1200vh;
+    overflow: hidden;
+}
+#section02.on .overlay{
+    transform: translateY(-100%);
+}
+
+
+#section02 .circle_fix{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+#section02 .main_image01{
+    width: 5000px;
+    height: 5000px;
+    border-radius: 50%;
+    /*background-image: url("https://www.designnas.com/portfolio/bx-site/pamela/css/../images_step/image01.png");*/
+    /*background-repeat: no-repeat;*/
+    position: absolute;
+    right: 5vw;
+    top: 50%;
+    transform: translateY(-50%) rotate(0);
+    /*background: linear-gradient(to left, dodgerblue,red,blue,black);*/
+}
+
+#section02 .main_image01 .card01{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#section02 .main_image01 .card02{
+    position: absolute;
+    right: 314px;
+    top: 64%;
+    transform: rotate(33deg);
+}
+
+#section02 .main_image01 .card03{
+    position: absolute;
+    right: 1113px;
+    bottom: 594px;
+    transform: rotate(66deg);
+}
+
+#section02 .main_image01 .card04{
+    position: absolute;
+    left: 1308px;
+    bottom: 476px;
+    transform: rotate(99deg);
+}
+
+#section02.on .main_image01{
+    /*opacity: 1;*/
+}
+
+
+#section02 .text01{
+    width: 696px;
+    height: 128px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 63px;
+    z-index: 100;
+}
+
+#section02 .text01 > div{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all .5s;
+    transform-origin: left center;
+    transform: translateY(30px);
+    /*filter: blur(3px);*/
+}
+
+#section02 .text01 > div.on{
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0);
+    /*filter: blur(0);*/
+}
+
+
+#section02 .text02{
+    position: absolute;
+    right: 96px;
+    bottom: 200px;
+    z-index: 100;
+}
+
+#section02 .text03 {
+    position: absolute;
+    left: 115px;
+    top: 32px;
+    z-index: 100;
+}
+
+#section02 .page_number{
+    width: 20px;
+    height: 12px;
+    position: absolute;
+    left: 96px;
+    top: 50%;
+    z-index: 100;
+}
+
+#section02 .page_number>div{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all .5s;
+    transform-origin: left center;
+    transform: translateY(20px);
+    /*filter: blur(3px);*/
+}
+
+#section02 .page_number>div.on{
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0);
+    /*filter: blur(0);*/
+}
+
+#section02 .fixed_pagenumber{
+    position: absolute;
+    left: 124px;
+    top: 50%;
+    z-index: 100;
+}
+
+
+#section02 .scroll{
+    width: 150px;
+    height: 10px;
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    overflow: hidden;
+}
+
+#section02 .scroll .inner{
+    width: 441px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    left: -200px;
 }
 @media screen and (max-width: 992px) {
   .blog-slider {
@@ -102,15 +432,184 @@ body {
 .blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(15) {
   transition-delay: 1.7s;
 }
-.blog-slider__img {
-  width: 65%;
-  flex-shrink: 0;
-  height: 95%;
-  /* background-image: linear-gradient(147deg, #ffffff 0%, #ffffff 74%); */
-  box-shadow: 4px 13px 30px 1px rgb(39 39 39 / 72%);
-  border-radius: 20px;
-  transform: translateX(-40px);
-  overflow: hidden;
+
+#section07 .text_container .text01_premium_collection{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 1s;
+}
+
+#section07 .text_container .text01_premium_collection.on{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#section07 .text_container .text02_premium_collection{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: all 4s;
+}
+
+#section07 .text_container .text02_premium_collection.on{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+#section08{
+    height: 1503px;
+    background: #e4e4e4;
+}
+
+#section08 .text_container02{
+    width: 1482px;
+    height: 259px;
+    /*background: #ffffff;*/
+    position: relative;
+    margin: 82px 0 0 71px;
+}
+
+#section08 .text_container02 .text03_premium_collection{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all 1s;
+}
+
+#section08 .text_container02 .text03_premium_collection.on{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#section08 .text_container02 .text_sacred_profane{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: all 1s;
+}
+
+#section08 .text_container02 .text_sacred_profane.on{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#section08 .sacred_profane{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 2s;
+}
+
+#section08 .sacred_profane.on{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*#section09{*/
+/*    height: 2918px;*/
+/*    background: #e4e4e4;*/
+/*}*/
+
+#section09{
+    height: 2918px;
+    background: #e7e7e8;
+}
+
+
+
+#section09 .container01{
+    width: 1328px;
+    height: 1074px;
+    position: relative;
+    margin-top: 180px;
+}
+
+
+
+#section09 .container01 .editorial08 {
+    position: absolute;
+    left: 0;
+    top: 75px;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: 1.5s;
+}
+
+#section09.on .container01 .editorial08{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#section09 .container01 .editorial09{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 1.5s;
+}
+
+#section09.on .container01 .editorial09{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#section09 .container01 .text01_sacred_profane{
+    position: absolute;
+    right: 127px;
+    bottom: 270px;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: all 1s 0.5s;
+}
+
+#section09.on .container01 .text01_sacred_profane{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#section09 .container01 .shop_button_black{
+    position: absolute;
+    top: 674px;
+    right: 0;
+    transform: translateX(50px);
+    opacity: 0;
+    transition: all 1s 0.5s;
+}
+
+#section09.on .container01 .shop_button_black{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#section09 .container01 .shop_button_black a{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+#section09 .container01 .shop_button_black .shop_button_black_fill{
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transition:all 1s;
+    width: 0;
 }
 .blog-slider__img:after {
   content: "";
@@ -259,3 +758,260 @@ body {
     width: 30px;
   }
 }
+
+#sec01 .txt_container{
+    width: 411px;
+    height: 408px;
+    position: absolute;
+    top: 297px;
+    left: 210px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+#sec01 .txt_container .stroke{
+    position: relative;
+    width: 411px;
+    height: 164px;
+}
+#sec01 .txt_container .stroke > div{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#sec01 .txt_container .stroke > div:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    transition: all 1.5s;
+}
+
+#sec01 .txt_container .stroke.on > div:nth-child(1){
+    width: 100%;
+}
+
+
+#sec01 .txt_container>div:nth-child(2){
+    margin-bottom: 87px;
+}
+
+
+#sec01 .story01{
+    position: absolute;
+    right: 340px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#sec01 .scroll_arrow{
+    position: absolute;
+    right: 162px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+#sec02{
+    /*width: 1426px;*/
+    height: 100%;
+    background: #d5d2c7;
+    position: relative;
+}
+
+#sec02 .txt_container02{
+    width: 514px;
+    height: 494px;
+    position: relative;
+    left: 160px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#sec02 .txt_container02 .stroke02{
+    position: relative;
+    width: 513px;
+    height: 159px;
+}
+#sec02 .txt_container02 .stroke02 > div{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#sec02 .txt_container02 .stroke02 > div:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    transition: all 1.5s;
+}
+
+#sec02 .txt_container02 .stroke02.on > div:nth-child(1){
+    width: 100%;
+}
+
+#sec02 .txt_container02>div:nth-child(1){
+    margin-bottom: 58px;
+}
+
+#sec02 .txt_container02>div:nth-child(2){
+    margin-bottom: 35px;
+}
+
+#sec02 .txt_container02>div:nth-child(3){
+    margin-bottom: 55px;
+}
+
+#sec02 .vertical{
+    position: absolute;
+    right: 800px;
+    top: 0;
+}
+
+#sec02 .vertical .inner{
+    animation: vertical 15s infinite linear;
+}
+
+#sec02 .vertical .inner div{
+    margin-bottom: 50px;
+}
+
+@keyframes vertical {
+    to{
+        transform:translateY(-3350px);
+    }
+}
+
+
+#sec02 .story02{
+    position: absolute;
+    right: 350px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#sec02 .scroll_arrow02{
+    position: absolute;
+    right: 170px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#sec03{
+    /*width: 1920px;*/
+    height: 100%;
+    background: #d5d2c7;
+}
+
+#sec03 .txt_container03{
+    width: 556px;
+    height: 530px;
+    position: relative;
+    left: 140px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+#sec03 .txt_container03 .stroke03{
+    position: relative;
+    width: 556px;
+    height: 225px;
+}
+#sec03 .txt_container03 .stroke03 > div{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#sec03 .txt_container03 .stroke03 > div:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    transition: all 1.5s;
+}
+
+#sec03 .txt_container03 .stroke03.on > div:nth-child(1){
+    width: 100%;
+}
+
+
+#sec03 .txt_container03>div:nth-child(1){
+    margin-bottom: 58px;
+}
+
+#sec03 .txt_container03>div:nth-child(2){
+    margin-bottom: 35px;
+}
+
+#sec03 .txt_container03>div:nth-child(3){
+    margin-bottom: 55px;
+}
+
+#sec03 .vertical{
+    position: absolute;
+    right: 990px;
+    top: 0;
+}
+
+#sec03 .vertical .inner{
+    animation: vertical 15s infinite linear;
+}
+
+#sec03 .vertical .inner div{
+    margin-bottom: 50px;
+}
+
+@keyframes vertical {
+    to{
+        transform:translateY(-3350px);
+    }
+}
+
+
+#sec03 .img_container{
+    width: 844px;
+    height: 828px;
+    position: absolute;
+    /*background: #000;*/
+    right: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#sec03 .img_container>div:nth-child(1){
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#sec03 .img_container>div:nth-child(2){
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#sec03 .img_container>div:nth-child(3){
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#sec03 .img_container>div:nth-child(4){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+section.horizontal {
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
