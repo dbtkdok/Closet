@@ -14,13 +14,12 @@ body {
 .blog-slider {
   width: 95%;
   position: relative;
-  max-width: 1500px;
   margin: auto;
   background: #5a75ff;
   box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 25px;
   border-radius: 25px;
-  height: 70%;
+  height: 90%;
   transition: all 0.3s;
 }
 @media screen and (max-width: 992px) {
@@ -110,7 +109,7 @@ body {
   /* background-image: linear-gradient(147deg, #ffffff 0%, #ffffff 74%); */
   box-shadow: 4px 13px 30px 1px rgb(39 39 39 / 72%);
   border-radius: 20px;
-  transform: translateX(-80px);
+  transform: translateX(-40px);
   overflow: hidden;
 }
 .blog-slider__img:after {
